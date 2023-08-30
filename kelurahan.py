@@ -12,8 +12,13 @@ from selenium.webdriver.common.by import By
 driver = webdriver.Chrome()
 wait = WebDriverWait(driver, 20)
 
+print_header = True
+sep = ","
 page = 1
 url = 'https://kodepos.nomor.net/_kodepos.php?_i=desa-kodepos'
+
+if print_header: 
+    print(sep.join(("no","kode_pos", "kelurahan", "kode_wilayah", "kecamatan", "kota")))
 
 while len(url) > 0: 
     driver.get(url)
@@ -36,7 +41,7 @@ while len(url) > 0:
             dt2 = cols[5].get_attribute('innerHTML')  # kota atau kabupaten
             kota = cols[6].find_element(By.TAG_NAME, 'a').get_attribute('innerHTML') 
 
-            rec = ",".join((no,kode_pos, kelurahan, kode_wilayah, kecamatan, dt2 + ' ' + kota))
+            rec = sep.join((no,kode_pos, kelurahan, kode_wilayah, kecamatan, dt2 + ' ' + kota))
             print(rec)
 
     # get next page link
