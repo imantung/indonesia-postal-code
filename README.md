@@ -12,8 +12,8 @@ Indonesia postal code from web scraping https://kodepos.nomor.net/
 ## Run
 
 ```bash
-python3 kelurahan.py >> csv/kelurahan.csv
-python3 kota.py >> csv/kota.csv
+python3 kelurahan.py >> csv/kelurahan_MM_YYYY.csv
+python3 kota.py >> csv/kota_MM_YYYY.csv
 ```
 
 
